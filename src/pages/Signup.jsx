@@ -23,11 +23,11 @@ export default function Signup() {
                             <div className="flex flex-row gap-6 pb-6 px-6 ">
                                 <div className="flex flex-col flex-1">
                                     <label htmlFor="" className="font-semibold">First Name</label>
-                                    <input type="text" className="border rounded-lg" />
+                                    <input type="text" name="firstName" className="border rounded-lg" />
                                 </div>
                                 <div className="flex flex-col flex-1">
                                     <label htmlFor="" className="font-semibold"> Last Name</label>
-                                    <input type="text" className="border rounded-lg" />
+                                    <input type="text" name="lastName" className="border rounded-lg" />
 
                                 </div>
                             </div>
