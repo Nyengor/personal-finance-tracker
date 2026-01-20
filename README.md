@@ -25,8 +25,7 @@ project/
 ├── src/
 │   ├── components/
 │   │   ├── TransactionList.jsx
-│   │   ├── AddTransactionForm.jsx
-│   │   └── SummaryCard.jsx
+│   │   ├── ManageMoney.jsx
 │   ├── context/
 │   │   └── FinanceContext.jsx
 │   ├── App.jsx

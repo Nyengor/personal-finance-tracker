@@ -11,7 +11,7 @@ export default function Sidebar() {
                 <p className="text-xl font-semibold mb-6">Your Finance Buddy</p>
 
                 <ul className="space-y-4">
-                    <li><Link to="/dashboard">
+                    <li><Link to="/">
                         <MdDashboard />
                         <span>Dashboard</span>
                     </Link></li>
