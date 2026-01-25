@@ -1,14 +1,22 @@
 import ProgressBar from "../components/ProgressBar"
 import Addincome from "../images/addincome.jpg"
 import Addexpense from "../images/addexpenses.jpg"
-import { FaArrowUp, FaPlus } from "react-icons/fa" 
+import { LuCircleArrowOutUpRight } from "react-icons/lu"; 
+import AddIncomeModal from "../components/AddIncomeModal";
+import AddExpenseModal from "../components/AddExpenseModal";
+import { useState } from "react";
+import Sidebar from "../components/SideBar";
 
 
 export default function Dashboard() {
+       const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
+       const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false);
+
 
     return (
         <>
-            <div className="flex flex-col">
+        <Sidebar />
+            <div className="flex flex-col w-[80%] ml-[20%] p-8 bg-gray-50 min-h-screen">
                 {/* GRID*/}
                 <div className="grid grid-cols-3 gap-6">
 
@@ -44,9 +52,9 @@ export default function Dashboard() {
 
                 </div>
 
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row gap-12 mt-8 ">
                     {/* CATEGORIES */}
-                    <div className=" w-[60%] mt-8 p-4 rounded-2xl bg-white shadow-md">
+                    <div className=" w-[68%] p-4 rounded-2xl bg-white shadow-md">
                         <h2 className="text-xl font-bold text-gray-800 mb-4">Categories</h2>
                         <div className="space-y-4">
                             <ProgressBar label="Food" percentage={60} color="bg-green-500" />
@@ -59,31 +67,42 @@ export default function Dashboard() {
                     </div>
 
                     {/* ADD INCOME/ESPENSES */}
-                    <div className="flex flex-col w-[35%]" >
-                        <div className="relative rounded-xl cursor-pointer">
+                    <div className="flex flex-col w-[33%]" >
+                        <div className="relative w-full h-50 rounded-xl mb-6 overflow-hidden cursor-pointer">
                             <img
                                 src={Addincome}
                                 alt="Add Income"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-                                <FaArrowUp className="text-2xl mb-2" />
-                                <span className="font-semibold text-lg">Add Income</span>
+                            <button onClick ={() => setOpenAddIncomeModal(true)}>
+                                <LuCircleArrowOutUpRight className="text-3xl font-bold mb-2" />
+                                <span className="font-bold text-lg">ADD INCOME</span> </button>
                             </div>
+                            {openAddIncomeModal && <AddIncomeModal onClose={() => setOpenAddIncomeModal(false)} />}
                         </div>
 
+
                         {/* Add Expenses */}
-                        <div className="relative w-full h-40 rounded-xl overflow-hidden cursor-pointer">
+                        <div className="relative w-full h-50 rounded-xl overflow-hidden cursor-pointer">
+                            
                             <img
                                 src={Addexpense}
                                 alt="Add Expense"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-                                <FaPlus className="text-2xl mb-2" />
-                                <span className="font-semibold text-lg">Add Expense</span>
+                            <button onClick={() => setOpenAddExpenseModal(true)}>
+                                <LuCircleArrowOutUpRight className="text-3xl font-bold mb-2" />
+                                <span className="font-bold text-lg">ADD EXPENSE</span>
+                             </button>
                             </div>
+                            
+                           
+                            {openAddExpenseModal && <AddExpenseModal onClose={() => setOpenAddExpenseModal(false)} />}
                         </div>
+
+                
                     </div>
 
                 </div>

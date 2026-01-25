@@ -1,7 +1,7 @@
-export default function Sidebar() {
+export default function Categories() {
     return(
         <>
-        <div> This is the Sidebar </div>
+        <div> This is the Categories Page </div>
         </>
     )
 }

@@ -1,7 +1,7 @@
-export default function Sidebar() {
+export default function ManageMoney() {
     return(
         <>
-        <div> This is the Sidebar </div>
+        <div> This is the Manage Money Page </div>
         </>
     )
 }

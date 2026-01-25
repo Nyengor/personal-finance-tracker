@@ -3,7 +3,6 @@ import { RouterProvider } from "react-router/dom";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import ManageMoney from "./pages/ManageMoney";
-import TransactionList from "./pages/TransactionList";
 import Login from "./pages/Login";
 import Categories from "./pages/Categories";
 
@@ -15,7 +14,6 @@ export default function App() {
   {path: "/sign-up", element: <Signup/>},
   {path: "/login", element: <Login/>},
   {path: "/manage-money", element: <ManageMoney/>},
-  {path: "/transaction-list", element: <TransactionList/>},
   {path: "/categories", element: <Categories/>},
 ]);
 
